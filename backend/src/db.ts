@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
+import "dotenv/config"; 
 
 const connectToDatabase = async () => {
   try {
-    const connection = await mongoose.connect(
- "mongodb+srv://ranjithmahesh1997:NKFuFnG3znlT4bCE@cluster0.woxrnit.mongodb.net/?retryWrites=true&w=majority"    )
+    const connection = await mongoose.connect(process.env.MONGO_URI);
     if (connection) {
       console.log("Connection established")
     }
